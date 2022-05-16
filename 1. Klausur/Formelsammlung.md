@@ -1,3 +1,8 @@
+---
+header-includes:
+- \usepackage{cancel}
+---
+
 # 1. Klausur
 ## 0. Rotation und Divergenz von E
 Die folgenden Bedingungen müssen für jedes statische elektrische Feld $\boldsymbol{E}(\boldsymbol{x})$ gelten:
