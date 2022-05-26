@@ -1,3 +1,8 @@
+---
+header-includes:
+- \usepackage{cancel}
+---
+
 # 1. Klausur
 ## 0. Rotation und Divergenz von E
 Die folgenden Bedingungen müssen für jedes statische elektrische Feld $\boldsymbol{E}(\boldsymbol{x})$ gelten:
@@ -351,3 +356,5 @@ $$P_{ij}=\frac{1}{2}\cdot\int \rho(x_m)\cdot x_i x_j d^3 x$$
 --- 
 
 # 2. Klausur
+
+In einer neuen Datei oder?
