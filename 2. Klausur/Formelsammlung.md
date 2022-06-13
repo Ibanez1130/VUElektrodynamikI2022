@@ -149,15 +149,40 @@ Der resultierende Ausdruck entspricht dem Ampére'schen Ausdruck für das magnet
 
 > Zeigen Sie unter Verwendung der zweiten magnetostatischen Maxwellgleichung, dem Ampéreschen Gesetz, die Divergenzfreiheit der Stromdichte $J_i(x_m)$.
 
-# TODO!
+Das Ampéresche Gesetz, die erste Maxwell-Gleichung der Magnetostatik, lautet:
+$$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
+Leitet man aus diesem Gesetz die Divergenz der elektrischen Stromdichte $\boldsymbol{J}$ ab, folgt:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=\mu_0\cdot\left(\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)\right)$$
+Die Divergenz der Rotation eines Vektorfeldes $\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)$ ist in allen Fällen $0$. Dieser Zusammenhang lässt sich wie folgt nachweisen:
+$$\underset{\vee}{\epsilon_{ijk}}\cdot\underset{\cup}{\partial_j\cdot\partial_k}B_i=0$$$$\vee\rightarrow\text{antisymmetrisch}$$$$\cup\rightarrow\text{symmetrisch}$$Die Multiplikation einer symmetrischen und einer antisymmetrischen Funktion ergibt jedenfalls $0$. Der Nachweis dafür ist wie folgt:
+$$A_{ij}\cdot S_{ij}=-A_{ji}\cdot S_{ji}\underset{umbenennen}{=}-A_{ij}\cdot S_{ij}$$
+$$\implies2\cdot A_{ij}\cdot S_{ij}=0$$
+Dadurch folgt, dass die Multiplikation eines antisymmetrischen Vektors mit einem symmetrischen Vektor $0$ ergibt. Damit folgt für die Divergenz der Stromdichte $\boldsymbol{\nabla}\cdot\boldsymbol{J}$:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=\mu_0\cdot0=0$$
+Somit wurde gezeigt, dass die elektrische Stromdichte $\boldsymbol{J}$ für statische Systeme divergenzfrei ist.
 
 ---
 
 > Zeigen Sie, dass die stationäre (zeitunabhängige) Kontinuitätsgleichung $\partial_iJ_i=-\frac{\partial\rho}{\partial t}$ eine direkte Konsequenz des Ampere’schen Gesetzes zwischen Magnetfeld $B_i(x_k)$ und Volumsstromdichte $J_i(x_k)$ darstellt.
 
-Das Ampére'sche Gesetz in Integralform lautet:
-$$\oint_C\boldsymbol{B}\cdot dl=\mu_0\int_S\boldsymbol{J}\cdot d\boldsymbol{A}=\mu_0\cdot I_{enclosed}$$
-# TODO!
+Das Ampéresche Gesetz, die erste Maxwell-Gleichung der Magnetostatik, lautet:
+$$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
+Dieser Ausdruck gilt lediglich für statische Systeme. In einem statischen System ist $\frac{\partial\rho}{\partial t}$ und somit auch $\boldsymbol{\nabla}\cdot\boldsymbol{J}$ gleich $0$. In zeitabhängigen Systemen ist dieser Ausdruck jedoch nicht korrekt. In solchen Systemen muss zu der elektrischen Stromdichte $\boldsymbol{J}$ der Verschiebungsstrom *(eng. displacement current)* berücksichtigt werden. Ergänzt man den Verschiebungsstrom in dem Ampéreschen Gesetz, erhält man das Ampére-Maxwell-Gesetz:
+$$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\left(\boldsymbol{J}+\epsilon_0\cdot\frac{\partial\boldsymbol{E}}{\partial t}\right)$$
+Basierend auf diesem Zusammenhang kann die Divergenz der elektrischen Stromdichte $\boldsymbol{\nabla}\cdot\boldsymbol{J}$ ermittelt werden:
+$$\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)=\mu_0\cdot\boldsymbol{\nabla}\cdot\left(\boldsymbol{J}+\epsilon_0\cdot\frac{\partial\boldsymbol{E}}{\partial t}\right)=\mu_0\cdot\left(\boldsymbol{\nabla}\cdot\boldsymbol{J}+\epsilon_0\cdot\boldsymbol{\nabla}\cdot\frac{\partial\boldsymbol{E}}{\partial t}\right)$$
+Gemäß der ersten Maxwell-Gleichung der Elektrostatik entspricht $\epsilon_0\cdot\left(\boldsymbol{\nabla}\cdot\boldsymbol{E}\right)$ gleich:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{E}=\frac{\rho}{\epsilon_0}\rightarrow\epsilon_0\cdot\left(\boldsymbol{\nabla}\cdot\boldsymbol{E}\right)=\rho$$
+Somit kann wie folgt in die Divergenz der elektrischen Stromdichte eingesetzt werden:
+$$\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)=\mu_0\cdot\left(\boldsymbol{\nabla}\cdot\boldsymbol{J}+\frac{\partial\rho}{\partial t}\right)$$
+Die Divergenz der Rotation eines Vektorfeldes $\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)$ ist in allen Fällen $0$. Dieser Zusammenhang lässt sich wie folgt nachweisen:
+$$\underset{\vee}{\epsilon_{ijk}}\cdot\underset{\cup}{\partial_j\cdot\partial_k}B_i=0$$$$\vee\rightarrow\text{antisymmetrisch}$$$$\cup\rightarrow\text{symmetrisch}$$Die Multiplikation einer symmetrischen und einer antisymmetrischen Funktion ergibt jedenfalls $0$. Der Nachweis dafür ist wie folgt:
+$$A_{ij}\cdot S_{ij}=-A_{ji}\cdot S_{ji}\underset{umbenennen}{=}-A_{ij}\cdot S_{ij}$$
+$$\implies2\cdot A_{ij}\cdot S_{ij}=0$$
+Dadurch folgt, dass die Multiplikation eines antisymmetrischen Vektors mit einem symmetrischen Vektor $0$ ergibt. Damit folgt für die Divergenz der Stromdichte $\boldsymbol{\nabla}\cdot\boldsymbol{J}$:
+$$0=\mu_0\cdot\left(\boldsymbol{\nabla}\cdot\boldsymbol{J}+\frac{\partial\rho}{\partial t}\right)=\boldsymbol{\nabla}\cdot\boldsymbol{J}+\frac{\partial\rho}{\partial t}$$
+Somit ergibt sich final:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=-\frac{\partial\rho}{\partial t}$$
 
 ---
 
