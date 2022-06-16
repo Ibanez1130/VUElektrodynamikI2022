@@ -1,4 +1,4 @@
-## 0. Allgemeine Formeln
+## 1. Allgemeine Formeln
 ### Ampérescher Ausdruck für das Magnetfeld
 $$B_i(x_m)=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{\epsilon_{ijk}J_i(x_m')(x_k-x_k')}{|x_m-x_m'|^3}$$
 
@@ -13,7 +13,7 @@ $$G=-\frac{1}{4\pi}\int d^3x'\frac{1}{|x_m-x_m'|}$$
 
 ---
 
-## 1. Magnetostatische Maxwell-Gleichungen
+## 2. Magnetostatische Maxwell-Gleichungen
 ### 1. Maxwell-Gleichung
 #### Elektrostatik
 $$\boldsymbol{\nabla}\cdot \boldsymbol{E}=\partial_iE_i(x_m)=\frac{\rho(x_m)}{\epsilon_0}$$
@@ -21,7 +21,7 @@ $$\boldsymbol{\nabla}\cdot \boldsymbol{E}=\partial_iE_i(x_m)=\frac{\rho(x_m)}{\e
 #### Magnetostatik
 $$\boldsymbol{\nabla}\times\boldsymbol{B}=\epsilon_{ijk}\partial_jB_k(x_m)=\mu_0\cdot J_i(x_m)$$
 
-### 2. Maxwell-Gleichung
+### 3. Maxwell-Gleichung
 #### Elektrostatik
 $$\boldsymbol{\nabla}\times\boldsymbol{E}=\epsilon_{ijk}\partial_jE_k(x_m)=0$$
 
@@ -30,7 +30,7 @@ $$\boldsymbol{\nabla}\cdot\boldsymbol{B}=\partial_iB_i(x_m)=0$$
 
 ---
 
-## 2. Nabla Rechenregeln
+## 4. Nabla Rechenregeln
 1. $\boldsymbol{\nabla}\cdot\boldsymbol{\nabla}=\boldsymbol{\nabla}^2=\boldsymbol{\Delta}$
 2. $\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)=\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{A}\right)-\boldsymbol{\nabla}^2\boldsymbol{A}$
 3. $\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\varphi\right)=\boldsymbol{\nabla}^2\varphi$
@@ -39,7 +39,9 @@ $$\boldsymbol{\nabla}\cdot\boldsymbol{B}=\partial_iB_i(x_m)=0$$
 
 ---
 
-## 3. Quellenfreiheit des magnetischen Feldes
+## 5. Erste Theoriefragen
+### 2019
+
 > Zeigen Sie die Quellfreiheit des Magnetfelds $B_i(x_m)$ unter Verwendung des Amperéschen Ausdrucks, welcher $B_i(x_m)$ in Abhängigkeit von der Volumsstromdichte $J_i(x_m)$ darstellt.
 
 Die Quellenfreiheit des magnetischen Feldes $\boldsymbol{B}$ ist über den magnetischen Hüllenfluss definiert. Dieser besagt, dass der durch eine geschlossene Fläche austretende magnetische Fluss zu jedem Zeitpunkt gleich Null sein muss:
@@ -87,6 +89,8 @@ Das magnetische Feld ist somit quellenfrei!
 
 ---
 
+### 2009 / 2011 / 2013
+
 > Zeigen Sie unter Zuhilfenahme des Biot-Savart’schen Ausdrucks für das Magnetfeld $B_i(x_m)$ in Abhängigkeit von der Volumsstromdichte $J_i(x_m)$ die Divergenzfreiheit von $B_i(x_m)$.
 
 Gemäß dem Biot-Savart-Gesetz erzeugt ein Stromleiter mit dem infinitesimalen Längenelement $d\boldsymbol{l}$, welcher sich an dem Ort $\boldsymbol{r}'$ befindet und von einem Strom $I$ durchflossen wird, am Ort $\boldsymbol{r}$ die magnetische Flussdichte $d\boldsymbol{B}$:
@@ -101,71 +105,86 @@ Dieser kann in die bereits eingangs beschriebene Berechnung eingesetzt werden.
 
 ---
 
+### 2013 Ersatztest
+
 >Unter Verwendung des Biot-Savart’schen Ausdrucks für das Magnetfeld $B_i(x_m)$ in Abhängigkeit von der Volumsstromdichte $J_i(x_m)$ zeige man die Abwesenheit von magnetischer Ladung.
 
 Die Abwesenheit von magnetischer Ladung ist äquivalent zu der Quellfreiheit des magnetischen Feldes.
 
 ---
 
-## 4. Ampéresches Gesetz und Stromdichte
+## 6. Zweite Theoriefragen
+### 2019
+
 > Für zwei Flächen $F_1$ und $F_2$, welche durch dieselbe Kurve $\gamma$ berandet werden (d.h. $\partial F_1=\partial F_2=\gamma$), weise man die Gleichheit des magnetischen Flusses durch diese Flächen, unter Verwendung der magnetostatischen Maxwellgleichungen, nach.
 
-![Integralsätze.png](./images/Integralsätze.png)
+![Gleichheit_magnetischer_Fluss.png](./images/Gleichheit_magnetischer_Fluss.png)
 Der magentische Fluss $\Phi$ ist allgemein als das Flächenintegral über die magnetische Flussdichte $\boldsymbol{B}$ definiert:
-$$\Phi=\int_{\partial V}\boldsymbol{B}\cdot dA$$
-Der Satz von Gauß lautet für ein vom Rand $\partial V$ eingeschlossenes Volumen $V$, für ein beliebiges Vektorfeld mit den Komponenten $B_i$:
-$$\int_V\partial_iB_i\,dV=\oint_{\partial V}B_i\,dA$$
-Die zweite Maxwell-Gleichung in der Magnetostatik lautet:
-$$\partial_iB_i(x_m)=0$$
-Demnach folgt für das Flächenintegral:
-$$\int_V\underbrace{\partial_iB_i}_{=0}\,dV=\oint_{\partial V}B_i\,dA$$
-$$0=\oint_{\partial V}B_i\,dA$$
-Nachdem sowohl die Fläche $F_1$, als auch die Fläche $F_2$ ein Rand $\partial V$ des Volumens $V$ sind, folgt:
-$$\oint_{F_1}B_i\,dA=\oint_{F_2}B_i\,dA=0$$
-# TODO! Reicht das als Nachweis? (ggf. Stokes, um auf den Rand zu kommen?)
+$$\Phi=\int_{S}\boldsymbol{B}\cdot dA$$
+Weiters lautet die ersten Maxwell-Gleichung der Magnetostatik:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{B}=0$$
+Diese Gleichung drückt aus, dass das magnetische Feld quellenfrei ist. Daraus folgt der Satz vom magnetischen Hüllenfluss, welcher besagt, dass der durch eine geschlossene Oberfläche $\partial V$ eines Volumens $V$ austretende magnetische Fluss $\Phi$ stets gleich Null sein muss. Mit dem Satz von Gauß, in Integralform, folgt:
+$$\oint_{\partial V}\boldsymbol{B}\cdot d\boldsymbol{A}=\int_{V}\underbrace{\boldsymbol{\nabla}\cdot\boldsymbol{B}}_{=0}\cdot d^3x=0$$
+An einer Fläche, wie in unserer Skizze der Fläche $A$, muss entsprechend, gemäß dem Satz vom magnetischen Hüllenfluss, gelten: (gedanklich wird dafür die Höhe der umgebenden "Box" gegen Null approximiert; $1$ und $2$ stehen für die Ober- und Unterseite der Fläche $A$)
+$$\Phi=0=\boldsymbol{B}_1\cdot A\cdot\boldsymbol{\hat{n}}-\boldsymbol{B}_2\cdot A\cdot\boldsymbol{\hat{n}}$$
+Daraus folgt, dass die Normalkomponente der magnetischen Flussdichte $\boldsymbol{B}_n$ jederzeit kontinuierlich über eine beliebige zweidimensionale Fläche $A$ ist:
+$$|[B_n]|=0$$
+Nachdem die tangentiale Komponente der magnetischen Flussdichte $\boldsymbol{B}_t$ gleich Null ist (der Fluss durch die Kurve $\gamma$ ist annähernd Null), der gesamt durch die Fläche $F$ austretende magnetische Fluss ebenfalls Null ist, müssen die Flüsse durch die Flächen $F_1$ und $F_2$ gleich aber entgegengesetzt sein:
+$$\int_{F_1}\boldsymbol{B}_n\cdot dA=\int_{F_2}\boldsymbol{B}_n\cdot dA$$
 
 ---
+
+### 2013
 
 > Unter Verwendung der magnetostatischen Maxwellgleichungen bestimme man die Rotation der Volumensstromdichte $J_i(x_m)$. Den so gewonnen Ausdruck löse man nach $B_i(x_m)$ unter Zuhilfenahme der Green-Funktion des Laplace-Operators auf.
 
-Die erste Maxwell-Gleichung der Magnetostatik lautet:
+Die zweite Maxwell-Gleichung der Magnetostatik, das Ampéresche Gesetz, lautet:
 $$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
-Ermittelt man basierend darauf die Rotation der Volumensstromdichte $\boldsymbol{J}$, folgt daraus:
-$$\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)=\boldsymbol{\nabla}\times\left(\mu_0\cdot\boldsymbol{J}\right)$$
-Gemäß der Rechenregeln für den Rotations-Operator ergibt sich daraus:
-$$\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{B}\right)-\boldsymbol{\nabla}^2\boldsymbol{B}=\boldsymbol{\nabla}\times\left(\mu_0\cdot\boldsymbol{J}\right)$$
-Nachdem die Divergenz der magnetischen Flussdichte $\boldsymbol{\nabla}\cdot\boldsymbol{B}$ gemäß der zweiten Maxwell-Gleichung der Magnetostatik gleich $0$ ist, folgt:
-$$0-\boldsymbol{\nabla}^2\boldsymbol{B}=\boldsymbol{\nabla}\times\left(\mu_0\cdot\boldsymbol{J}\right)$$
-Umgeformt nach der magnetischen Flussdichte $\boldsymbol{B}$ ergibt sich daraus:
-$$\boldsymbol{B}=-\mu_0\cdot\frac{\boldsymbol{\nabla}\times\boldsymbol{J}}{\boldsymbol{\nabla}^2}$$
-Die Green-Funktion des Laplaceoperators entspricht außerdem:
-$$G=-\frac{1}{4\pi}\cdot\int d^3x'\frac{1}{|x_m-x_m'|}$$
-# TODO! wohin verschwindet das ^-2?
-Setzt man die Green-Funktion des Laplaceoperators in die Formel für die magnetische Flußdichte $\boldsymbol{B}$ ein, folgt daraus:
-$$\boldsymbol{B}=+\frac{\mu_0}{4\pi}\cdot\int d^3x\frac{\epsilon_{ijk}\partial_jJ_k}{|x_m-x_m'|}$$
-Der resultierende Ausdruck entspricht dem Ampére'schen Ausdruck für das magnetische Feld $\boldsymbol{B}$.
+In diesen Ausdruck kann man den Zusammenhang zwischen der magnetischen Flussdichte $\boldsymbol{B}$ und des magnetischen Vektorpotentials $\boldsymbol{A}$ einsetzen:
+$$\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}$$
+Damit folgt:
+$$\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)=\mu_0\cdot\boldsymbol{J}$$
+Die linke Seite des Zusammenhangs kann gemäß der Rechenregeln des Nabla-Operators $\boldsymbol{\nabla}$ umgeformt werden:
+$$\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{A}\right)-\boldsymbol{\nabla}^2\boldsymbol{A}=\mu_0\cdot\boldsymbol{J}$$
+Gemäß der Coulomb-Eichung ist das Vektorpotential $\boldsymbol{A}$ divergenzfrei. Entsprechend gilt:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$$
+Somit folgt für den Ausdruck basierend auf dem Ampéreschen Gesetz:
+$$\boldsymbol{\nabla}\left(0\right)-\boldsymbol{\nabla}^2\boldsymbol{A}=\mu_0\cdot\boldsymbol{J}$$
+Nachdem der Gradient von Null $\boldsymbol{\nabla}\left(0\right)$ ebenfalls Null ist, kann weiters geschrieben werden:
+$$-\boldsymbol{\nabla}^2\boldsymbol{A}=\mu_0\cdot\boldsymbol{J}$$
+In diesen Ausdruck kann gemäß der Angabe die Greensche Funktion des Laplaceoperators $\boldsymbol{\nabla}^2$ eingesetzt werden. Diese lautet im dreidimensionalen Raum:
+$$G=-\frac{1}{4\pi}\cdot\frac{1}{|x_m-x_m'|}$$
+Eingesetzt folgt damit:
+$$\boldsymbol{A}\left(\boldsymbol{x}\right)=\mu_0\cdot\int G\left(\boldsymbol{x}-\boldsymbol{x}'\right)\cdot\boldsymbol{J}\left(\boldsymbol{x}'\right)\,d^3x'$$
+Final folgt somit der Ausdruck für das magnetische Vektorpotential $\boldsymbol{A}$:
+$$\boldsymbol{A}\left(\boldsymbol{x}\right)=\frac{\mu_0}{4\pi}\cdot\int d^3x'\frac{\boldsymbol{J}\left(\boldsymbol{x}'\right)}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
+Gemäß der Coulomb-Eichung muss gelten, dass die Divergenz des magnetischen Vektorpotentials $\boldsymbol{A}$ gleich Null ist. Auf die Lösung angewandt ist diese Beziehung gegeben, da die Divergenz der elektrischen Stromdichte $\boldsymbol{\nabla}\cdot\boldsymbol{J}$ ebenfalls gleich Null ist.
 
 ---
 
+### 2013 Ersatztest
+
 > Zeigen Sie unter Verwendung der zweiten magnetostatischen Maxwellgleichung, dem Ampéreschen Gesetz, die Divergenzfreiheit der Stromdichte $J_i(x_m)$.
 
-Das Ampéresche Gesetz, die erste Maxwell-Gleichung der Magnetostatik, lautet:
+Das Ampéresche Gesetz, die zweite Maxwell-Gleichung der Magnetostatik, lautet:
 $$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
 Leitet man aus diesem Gesetz die Divergenz der elektrischen Stromdichte $\boldsymbol{J}$ ab, folgt:
-$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=\mu_0\cdot\left(\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)\right)$$
+$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=\frac{1}{\mu_0}\cdot\left(\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)\right)$$
 Die Divergenz der Rotation eines Vektorfeldes $\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)$ ist in allen Fällen $0$. Dieser Zusammenhang lässt sich wie folgt nachweisen:
 $$\underset{\vee}{\epsilon_{ijk}}\cdot\underset{\cup}{\partial_j\cdot\partial_k}B_i=0$$$$\vee\rightarrow\text{antisymmetrisch}$$$$\cup\rightarrow\text{symmetrisch}$$Die Multiplikation einer symmetrischen und einer antisymmetrischen Funktion ergibt jedenfalls $0$. Der Nachweis dafür ist wie folgt:
 $$A_{ij}\cdot S_{ij}=-A_{ji}\cdot S_{ji}\underset{umbenennen}{=}-A_{ij}\cdot S_{ij}$$
 $$\implies2\cdot A_{ij}\cdot S_{ij}=0$$
 Dadurch folgt, dass die Multiplikation eines antisymmetrischen Vektors mit einem symmetrischen Vektor $0$ ergibt. Damit folgt für die Divergenz der Stromdichte $\boldsymbol{\nabla}\cdot\boldsymbol{J}$:
-$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=\mu_0\cdot0=0$$
+$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=\frac{1}{\mu_0}\cdot0=0$$
 Somit wurde gezeigt, dass die elektrische Stromdichte $\boldsymbol{J}$ für statische Systeme divergenzfrei ist.
 
 ---
 
+### 2011
+
 > Zeigen Sie, dass die stationäre (zeitunabhängige) Kontinuitätsgleichung $\partial_iJ_i=-\frac{\partial\rho}{\partial t}$ eine direkte Konsequenz des Ampere’schen Gesetzes zwischen Magnetfeld $B_i(x_k)$ und Volumsstromdichte $J_i(x_k)$ darstellt.
 
-Das Ampéresche Gesetz, die erste Maxwell-Gleichung der Magnetostatik, lautet:
+Das Ampéresche Gesetz, die zweite Maxwell-Gleichung der Magnetostatik, lautet:
 $$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
 Dieser Ausdruck gilt lediglich für statische Systeme. In einem statischen System ist $\frac{\partial\rho}{\partial t}$ und somit auch $\boldsymbol{\nabla}\cdot\boldsymbol{J}$ gleich $0$. In zeitabhängigen Systemen ist dieser Ausdruck jedoch nicht korrekt. In solchen Systemen muss zu der elektrischen Stromdichte $\boldsymbol{J}$ der Verschiebungsstrom *(eng. displacement current)* berücksichtigt werden. Ergänzt man den Verschiebungsstrom in dem Ampéreschen Gesetz, erhält man das Ampére-Maxwell-Gesetz:
 $$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\left(\boldsymbol{J}+\epsilon_0\cdot\frac{\partial\boldsymbol{E}}{\partial t}\right)$$
@@ -186,4 +205,14 @@ $$\boldsymbol{\nabla}\cdot\boldsymbol{J}=-\frac{\partial\rho}{\partial t}$$
 
 ---
 
-## 5. 
+%%
+## 7. TODOs
+
+- [x] Theoriefragen umbenennen
+- [x] Fertigstellen der alten Theoriefragen (Donnerstag Nachmittag)
+- [ ] Parallele Drähte – Testaufgabe 2019
+- [ ] 34 Rotierende geladene Kugel – Testaufgabe 2019
+- [ ] Rechenbeispiele 2009 - 2013 (2. EdynTest_Theorie_u_Bsp.pdf)
+- [ ] Metallkugel (Edyn Test 2_2019.pdf)
+- [ ] Luftspule (Edyn Test 2_2019.pdf)
+%%
