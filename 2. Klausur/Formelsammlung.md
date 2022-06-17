@@ -1,13 +1,8 @@
 ## 1. Allgemeine Formeln
-### Ampérescher Ausdruck für das Magnetfeld
-$$B_i(x_m)=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{\epsilon_{ijk}J_i(x_m')(x_k-x_k')}{|x_m-x_m'|^3}$$
-
-### Ampéresches Gesetz in Integralform
+### Ampére'sches Gesetz in Integralform
 $$\oint_C\boldsymbol{B}\cdot dl=\mu_0\int_S\boldsymbol{J}\cdot d\boldsymbol{A}=\mu_0\cdot I_{enclosed}$$
-
-### Biot-Savart'scher Ausdruck für das Magnetfeld
-$$\boldsymbol{B}(\boldsymbol{x})=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{I\,dl\times\boldsymbol{\hat{r}}}{r^2}=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{I\,dl\times(\boldsymbol{x}-\boldsymbol{x}')}{|\boldsymbol{x}-\boldsymbol{x}'|^3}$$
-
+### Gauß'sches Gesetz in Integralform
+$$\oint_S\boldsymbol{E}\cdot d\boldsymbol{A}=\frac{1}{\epsilon_0}\cdot\int_V\rho(\boldsymbol{x})\cdot d^3x=\frac{Q_{enclosed}}{\epsilon_0}$$
 ### Green'sche Funktion des Laplaceoperators
 $$G=-\frac{1}{4\pi}\int d^3x'\frac{1}{|x_m-x_m'|}$$
 
@@ -19,14 +14,14 @@ $$G=-\frac{1}{4\pi}\int d^3x'\frac{1}{|x_m-x_m'|}$$
 $$\boldsymbol{\nabla}\cdot \boldsymbol{E}=\partial_iE_i(x_m)=\frac{\rho(x_m)}{\epsilon_0}$$
 
 #### Magnetostatik
-$$\boldsymbol{\nabla}\times\boldsymbol{B}=\epsilon_{ijk}\partial_jB_k(x_m)=\mu_0\cdot J_i(x_m)$$
+$$\boldsymbol{\nabla}\cdot\boldsymbol{B}=\partial_iB_i(x_m)=0$$
 
-### 3. Maxwell-Gleichung
+### 2. Maxwell-Gleichung
 #### Elektrostatik
 $$\boldsymbol{\nabla}\times\boldsymbol{E}=\epsilon_{ijk}\partial_jE_k(x_m)=0$$
 
 #### Magnetostatik
-$$\boldsymbol{\nabla}\cdot\boldsymbol{B}=\partial_iB_i(x_m)=0$$
+$$\boldsymbol{\nabla}\times\boldsymbol{B}=\epsilon_{ijk}\partial_jB_k(x_m)=\mu_0\cdot J_i(x_m)$$
 
 ---
 
@@ -205,8 +200,104 @@ $$\boldsymbol{\nabla}\cdot\boldsymbol{J}=-\frac{\partial\rho}{\partial t}$$
 
 ---
 
+## 7. Der elektrische Strom
+Allgemein gelten für den elektrischen Strom die folgenden Zusammenhänge:
+$$I=\oint_S\boldsymbol{J}\cdot\boldsymbol{\hat{n}}\cdot d\boldsymbol{A}=\sigma\cdot\oint_S\boldsymbol{E}\cdot\boldsymbol{\hat{n}}\cdot d\boldsymbol{A}=\sigma\cdot\int_V\boldsymbol{\nabla}\cdot\boldsymbol{E}\cdot d^3x=\frac{\sigma}{\epsilon}\cdot\int_V\rho\cdot d^3x=\frac{\sigma}{\epsilon}\cdot Q$$
+
+### Ohm'sches Gesetz
+$U$ entspricht der elektrischen Spannung. $I$ entspricht dem elektrischen Strom. $R$ entspricht dem elektrischen Widerstand.
+$$U=I\cdot R$$
+Der elektrische Widerstand $R$ eines Zylinders lässt sich beispielsweise wie folgt berechnen:
+$$R=\frac{L}{\sigma\cdot A}$$
+$L$ entspricht der Länge des Zylinders und $A$ dessen Querschnittsfläche.
+Die elektrische Leitfähigkeit $\sigma$ lässt sich auch durch den spezifischen Widerstand $\rho$ ausdrücken:
+$$\sigma=\frac{1}{\rho}$$
+### Lokale Form des Ohm'schen Gesetzes
+Die lokale Form des Ohm'schen Gesetzes ist:
+$$\boldsymbol{J}\left(\boldsymbol{x}\right)=\sigma\cdot\boldsymbol{E}\left(\boldsymbol{x}\right)$$
+
+### Joule'sches Gesetz
+Das Joule'sche Gesetz definiert die Leistung $P$ basierend auf dem Strom $I$, der Spannung $U$ und dem Widerstand $R$:
+$$P=U\cdot I=I^2\cdot R$$
+
+### Elektrische Stromdichte
+Sei $d\boldsymbol{A}$ ein infinitesimales Flächenstück, dann ist $dI$ die Ladung, welche pro Zeiteinheit das Flächenstück $d\boldsymbol{A}$ passiert:
+$$dI=\boldsymbol{J}\cdot d\boldsymbol{A}$$
+Die elektrische Stromdichte ist unter anderem wie folgt definiert. $n$ entspricht dabei der Anzahl an Ladungen pro Volumenseinheit. $q$ ist die Ladung der einzelnen Ladungsträger. $\boldsymbol{v}$ entspricht der mittleren Geschwindigkeit der Ladungen. $\rho$ entspricht der elektrischen Raumladungsdichte.
+$$\boldsymbol{J}=\underbrace{q\cdot n}_{=\rho}\cdot\boldsymbol{v}$$
+### Stationäre Kontinuitätsgleichung
+Die stationäre Kontinuitätsgleichung besagt, dass der Fluss von Ladung, aus einem Volumen $V$, in besagtem Volumen $V$ zu einer Abnahme der Ladung führt. $\boldsymbol{J}$ entspricht der Volumensstromdichte. $\rho$ entspricht der Volumensladungsdichte.
+$$\boldsymbol{\nabla}\cdot\boldsymbol{J}=-\frac{\partial\rho}{\partial t}$$
+In Integralform entspricht der Zusammenhang:
+$$\oint_S\boldsymbol{J}\cdot d\boldsymbol{A}=-\frac{d}{dt}\int_V\rho\cdot d^3x$$
+
+---
+
+## 8. Das magnetische Feld
+![Ausrichtung-magnetisches-Feld.png](./images/Ausrichtung-magnetisches-Feld.png)
+Das magnetische Feld $\boldsymbol{B}$ ist stets in $\vec{e}_{\varphi}$ ausgerichtet.
+
+### Ampérescher Ausdruck für das Magnetfeld
+$$B_i(x_m)=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{\epsilon_{ijk}J_i(x_m')(x_k-x_k')}{|x_m-x_m'|^3}$$
+Der Tensor $x_m$ entspricht dem **Referenzpunkt**.
+Der Tensor $x_m'$ entspricht dem **Quellpunkt**.
+
+### Biot-Savart'scher Ausdruck für das Magnetfeld
+$$d\boldsymbol{B}=\frac{\mu_0}{4\pi}\frac{I\,d\boldsymbol{l}\times\boldsymbol{\hat{r}}}{r^2}$$
+In Integralform entspricht der Ausdruck:
+$$\boldsymbol{B}(\boldsymbol{x})=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{I\,dl\times\boldsymbol{\hat{r}}}{r^2}=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{I\,dl\times(\boldsymbol{x}-\boldsymbol{x}')}{|\boldsymbol{x}-\boldsymbol{x}'|^3}$$
+
+### Langer gerader Draht
+Das magnetische Feld für einen langen geraden Draht ist über die folgende Formel definiert:
+$$\boldsymbol{B}\left(\boldsymbol{x}\right)=\frac{\mu_0\cdot I}{2\pi\cdot R}\cdot\boldsymbol{\hat{\Phi}}$$
+$R$ entspricht dabei dem Radius des Leiters.
+
+### Kraft
+Die auf ein Teilchen mit der Ladung $q$ wirkende Kraft, verursacht durch ein Magnetfelt mit der magnetischen Flussdichte $\boldsymbol{B}$, entspricht:
+$$\boldsymbol{F}=q\boldsymbol{v}\times\boldsymbol{B}$$
+
+---
+
+## 9. Das magnetische Vektorpotential
+
+---
+
+## 10. Integralsätze
+![[Brain/Studying/Elektrodynamik I 136.015/1. Klausur/images/Integralsätze.png]]
+### Gaußscher Integralsatz
+Der Satz von Gauß lautet für ein vom Rand $\partial V$ eingeschlossenes Volumen $V$ für ein beliebiges Vektorfeld mit den Komponenten $E_i$:
+$$\int d^3V\partial_iE_i=\oint_{\partial V}dA_iE_i$$wobei $A_i$ die Komponenten des (stets nach außen gerichteten) Flächennormalvektors am Rand des Volumens sind.
+
+### Stokescher Integralsatz
+Der Satz von Stokes verknüpft ein Oberflächenintegral über eine (gekrümmte) Fläche mit einem Kurvenintegral über den Rand der Fläche:
+$$\int_SdA_i\epsilon_{ijk}\partial_jF_k=\oint_{\partial S}ds_iF_i$$
+
+---
+
+## 11. Randbedingungen
+$$|[E_t]|=0$$
+$$|[D_n]|=0$$
+$$|[B_n]|=0$$
+
+---
+
+## 12. Der Kondensator
+### Ladung
+Allgemein gilt für die Ladung $Q$ in einem Kondensator der folgende Zusammenhang mit der elektrischen Spannung $U$ und der Kapazität $C$:
+$$Q=C\cdot U$$
+Daraus folgt mit dem Ohm'schen Gesetz:
+$$R\cdot C=\frac{\epsilon}{\sigma}$$
+
+---
+
+## 13. Das elektrische Feld
+### Allgemeine Zusammenhänge
+$$U=s\cdot E$$$$F=q\cdot E$$$$E=-\nabla V$$
+
+---
+
 %%
-## 7. TODOs
+## 14. TODOs
 
 - [x] Theoriefragen umbenennen
 - [x] Fertigstellen der alten Theoriefragen (Donnerstag Nachmittag)
