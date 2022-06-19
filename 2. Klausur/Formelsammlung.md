@@ -59,7 +59,7 @@ Aus der Nebenrechnung lässt sich demnach ablesen:
 $$-\boldsymbol{\nabla}\frac{1}{|\boldsymbol{x}_m-\boldsymbol{x}_m'|}=\frac{\boldsymbol{x}_k-\boldsymbol{x}_k'}{|\boldsymbol{x}_m-\boldsymbol{x}_m'|^3}$$
 Dieser Zusammenhang lässt sich nun in den Ampéreschen Ausdruck für das magnetische Feld $\boldsymbol{B}$ einsetzen:
 $$B_i(x_m)=\frac{\mu_0}{4\pi}\cdot\int d^3x'\,\epsilon_{ijk}\cdot J_i\cdot\left(-\partial_k\frac{1}{|x_m-x_m'|}\right)$$
-Das Kreuzprodukt $\epsilon_{ijk}$ sowie die Ableitung $\partial_k$ können aus der Integration heraus gehoben werden, nachdem sie nicht von $x'$ abhängig sind. Dadurch folgt:
+Das Kreuzprodukt $\epsilon_{ijk}$ sowie die Ableitung $\partial_k$ können aus der Integration heraus gehoben werden, nachdem sie von $x$ und nicht von $x'$ abhängig sind bzw. sich darauf beziehen. Dadurch folgt:
 $$B_i(x_m)=\epsilon_{ijk}\cdot\left(-\partial_k\right)\cdot\underbrace{\left(\frac{\mu_0}{4\pi}\cdot\int d^3x'\,\frac{J_i}{|x_m-x_m'|}\right)}_{=A_j\left(x_m\right)}$$
 Der hintere Teil der Gleichung entspricht nun dem magnetischen Vektorpotential $\boldsymbol{A}$. Demnach kann der Ausdruck wie folgt vereinfacht werden:
 $$B_i(x_m)=\epsilon_{ijk}\cdot\left(-\partial_j\right)\cdot A_k\left(x_m\right)$$
@@ -132,6 +132,34 @@ $$\int_{F_1}\boldsymbol{B}_n\cdot dA=\int_{F_2}\boldsymbol{B}_n\cdot dA$$
 ### 2013
 
 > Unter Verwendung der magnetostatischen Maxwellgleichungen bestimme man die Rotation der Volumensstromdichte $J_i(x_m)$. Den so gewonnen Ausdruck löse man nach $B_i(x_m)$ unter Zuhilfenahme der Green-Funktion des Laplace-Operators auf.
+
+Die zweite Maxwell-Gleichung der Magnetostatik, das Ampéresche Gesetz, lautet:
+$$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
+Basierend auf diesem Zusammenhang kann man die Rotation der elektrischen Stromdichte $\boldsymbol{J}$ ermitteln. Hierzu werden beide Seite der Gleichung um das Kreuzprodukt mit Nabla erweitert:
+$$\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)=\mu_0\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\right)$$
+Gemäß der Rechenregeln des Nabla Operators kann die linke Seite der Gleichung $\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{B}\right)$ wie folgt umgeschrieben werden:
+$$\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{B}\right)-\boldsymbol{\nabla}^2\boldsymbol{B}=\mu_0\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\right)$$
+Weiters ist gemäß der ersten Maxwell-Gleichung der Magnetostatik die Divergenz der magnetischen Flussdichte $\boldsymbol{\nabla}\cdot\boldsymbol{B}$ stets gleich Null. Somit folgt:
+$$\underbrace{\boldsymbol{\nabla}\left(0\right)}_{=0}-\boldsymbol{\nabla}^2\boldsymbol{B}=\mu_0\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\right)$$
+Nun kann, wie in der Angabe beschrieben, die Green'sche Funktion des Laplaceoperators $G$ angewendet werden. Diese lautet in Integralform:
+$$G=-\frac{1}{4\pi}\cdot\frac{1}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
+Eingesetzt folgt somit:
+$$G=\mu_0\cdot\int_VG(\boldsymbol{x}-\boldsymbol{x}')\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\left(\boldsymbol{x'}\right)\right)\,d^3x'$$
+Somit folgt für den Ausdruck der magnetischen Flussdichte $\boldsymbol{B}$:
+$$\boldsymbol{B}=+\frac{\mu_0}{4\pi}\cdot\int_V\frac{\boldsymbol{\nabla}\times\boldsymbol{J}\left(\boldsymbol{x}'\right)}{|\boldsymbol{x}-\boldsymbol{x}'|}\,d^3x'$$
+Beziehungsweise in Indexschreibweise:
+$$B_i(x_m)=\frac{\mu_0}{4\pi}\cdot\int_V\frac{\epsilon_{ijk}\cdot\partial_j\cdot J_k\left(x_m'\right)}{|x_m-x_m'|}\,d^3x'$$
+Die Ableitung des resultierenden Ausdrucks für die magnetische Flussdichte $\boldsymbol{B}$ kann in weiterer Folge aufgelöst werden:
+$$\partial_k\frac{1}{\underbrace{|\boldsymbol{x}_m-\boldsymbol{x}_m'|}_{\text{Abstand}}}=\partial_k\frac{1}{|\boldsymbol{x}|}=\partial_k\frac{1}{\sqrt{\boldsymbol{x}^2}}=\underbrace{-\frac{1}{2}\cdot\frac{1}{{\sqrt{\boldsymbol{x}^{2}}}^3}}_{\text{äußere Ableitung}}\cdot\partial_k\boldsymbol{x}^2=-\frac{1}{\cancel{2}}\cdot\frac{1}{\sqrt{{\boldsymbol{x}^{2}}}^3}\cdot\underbrace{\cancel{2}\cdot\boldsymbol{x}}_{innere Ableitung}\cdot\delta_{km}$$
+$$=-\frac{\boldsymbol{x}_m-\boldsymbol{x}_m'}{|\boldsymbol{x}_m-\boldsymbol{x}_m'|^3}\cdot\delta_{km}=-\frac{\boldsymbol{x}_k-\boldsymbol{x}_k'}{|\boldsymbol{x}_m-\boldsymbol{x}_m'|^3}$$
+Aus der Nebenrechnung lässt sich demnach ablesen:
+$$-\boldsymbol{\nabla}\frac{1}{|\boldsymbol{x}_m-\boldsymbol{x}_m'|}=\frac{\boldsymbol{x}_k-\boldsymbol{x}_k'}{|\boldsymbol{x}_m-\boldsymbol{x}_m'|^3}$$
+Dieser Zusammenhang lässt sich nun in den Ausdruck für die magnetische Flussdichte $\boldsymbol{B}$ einsetzen, wodurch final der Ampéresche Ausdruck für das magnetische Feld $\boldsymbol{B}$ folgt:
+$$B_i(x_m)=\frac{\mu_0}{4\pi}\cdot\int d^3x'\,\frac{\epsilon_{ijk}\cdot J_j\left(x_m'\right)\cdot\left(x_k-x_k'\right)}{|x_m-x_m'|}$$
+
+---
+
+### Herleitung ohne Altfrage
 
 Die zweite Maxwell-Gleichung der Magnetostatik, das Ampéresche Gesetz, lautet:
 $$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\cdot\boldsymbol{J}$$
@@ -233,9 +261,19 @@ $$\oint_S\boldsymbol{J}\cdot d\boldsymbol{A}=-\frac{d}{dt}\int_V\rho\cdot d^3x$$
 
 ---
 
-## 8. Das magnetische Feld
+## 8. Das elektrische Potential
+$$V(\boldsymbol{x})=\frac{1}{4\pi\cdot\epsilon_0}\cdot\int\frac{\rho(\boldsymbol{x'})}{|\boldsymbol{x}-\boldsymbol{x'}|}\,d^3x'$$
+Ist das elektrische Feld $\boldsymbol{E}$ bekannt, gilt für das elektrische Potential:
+$$V\left(\boldsymbol{x}\right)=-\int_{\Gamma}\boldsymbol{E}\left(\boldsymbol{x}\right)\cdot dl$$
+Das elektrische Potential entspricht dem Wegintegral von $x_0$ nach $x$.
+
+---
+
+## 9. Das magnetische Feld
 ![Ausrichtung-magnetisches-Feld.png](./images/Ausrichtung-magnetisches-Feld.png)
-Das magnetische Feld $\boldsymbol{B}$ ist stets in $\vec{e}_{\varphi}$ ausgerichtet.
+Das magnetische Feld $\boldsymbol{B}$ ist stets in $\vec{e}_{\varphi}$ ausgerichtet. Die Ausrichtung entspricht im Falle einer Kugel auch:
+$$\vec{e}_B=\vec{e}_{\varphi}=\vec{e}_I\times\vec{e}_r$$
+Hierbei ist $\vec{e}_I$ die Richtung des Stromes und $\vec{e}_r$ die Richtung des Radius $R$.
 
 ### Ampérescher Ausdruck für das Magnetfeld
 $$B_i(x_m)=\frac{\mu_0}{4\pi}\int_{wire}d^3x'\,\frac{\epsilon_{ijk}J_i(x_m')(x_k-x_k')}{|x_m-x_m'|^3}$$
@@ -258,11 +296,13 @@ $$\boldsymbol{F}=q\boldsymbol{v}\times\boldsymbol{B}$$
 
 ---
 
-## 9. Das magnetische Vektorpotential
+## 10. Das magnetische Vektorpotential
+Das magnetische Vektorpotential $\boldsymbol{A}$ hängt wie folgt mit der magnetischen Flussdichte $\boldsymbol{B}$ zusammen:
+$$\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}$$
 
 ---
 
-## 10. Integralsätze
+## 11. Integralsätze
 ![[Brain/Studying/Elektrodynamik I 136.015/1. Klausur/images/Integralsätze.png]]
 ### Gaußscher Integralsatz
 Der Satz von Gauß lautet für ein vom Rand $\partial V$ eingeschlossenes Volumen $V$ für ein beliebiges Vektorfeld mit den Komponenten $E_i$:
@@ -274,14 +314,14 @@ $$\int_SdA_i\epsilon_{ijk}\partial_jF_k=\oint_{\partial S}ds_iF_i$$
 
 ---
 
-## 11. Randbedingungen
+## 12. Randbedingungen
 $$|[E_t]|=0$$
 $$|[D_n]|=0$$
 $$|[B_n]|=0$$
 
 ---
 
-## 12. Der Kondensator
+## 13. Der Kondensator
 ### Ladung
 Allgemein gilt für die Ladung $Q$ in einem Kondensator der folgende Zusammenhang mit der elektrischen Spannung $U$ und der Kapazität $C$:
 $$Q=C\cdot U$$
@@ -290,19 +330,54 @@ $$R\cdot C=\frac{\epsilon}{\sigma}$$
 
 ---
 
-## 13. Das elektrische Feld
+## 14. Das elektrische Feld
 ### Allgemeine Zusammenhänge
 $$U=s\cdot E$$$$F=q\cdot E$$$$E=-\nabla V$$
 
 ---
 
-%%
-## 14. TODOs
+## 15. Geometrien
+### Kugelkoordinaten
+![./images/Kugelkoordinaten.png](./images/Kugelkoordinaten.png)
+$$\vec{r}(R,\theta,\varphi)=\left[{\begin{array}{cc} R\cdot\sin{\theta}\cdot\cos{\varphi} \\ R\cdot\sin{\theta}\cdot\sin{\varphi} \\ R\cdot\cos{\theta} \\ \end{array} }\right]$$
+Bzw. mit einer anderen Parametrisierung:
+$$\vec{r}(R,s,t)=\left[{\begin{array}{cc} R\cdot\sin{s}\cdot\cos{t} \\ R\cdot\sin{s}\cdot\sin{t} \\ R\cdot\cos{s} \\ \end{array} }\right]$$
+In Kugelkoordinaten gilt:
+$$dV=r^2\cdot\sin{\theta}$$
+Zum Beispiel:
+$$\int_VE\,dV=\int_0^R\int_0^{2\pi}\int_0^{\pi}E\,d\theta d\varphi dr=\int_0^R\int_0^{2\pi}\int_0^{\pi}E\cdot r^2\cdot\sin{\theta}\,dr=4\pi\cdot\int_0^RE\cdot r^2\,dr$$
 
+---
+
+### Kreiskoordinaten / Polarkoordinaten
+![./images/Polarkoordinaten.png](./images/Polarkoordinaten.png)
+$$\vec{r}(R,\varphi)=\left[{\begin{array}{cc} R\cdot\cos{\varphi} \\ R\cdot\sin{\varphi} \\ \end{array} }\right]$$
+Bzw. mit einer anderen Parametrisierung:
+$$\vec{r}(s,t)=\left[{\begin{array}{cc} s\cdot\cos{t} \\ s\cdot\sin{t} \\ \end{array} }\right]$$
+
+---
+
+### Zylinderkoordinaten
+![./images/Zylinderkoordinaten.png](./images/Zylinderkoordinaten.png)
+$$\vec{r}(R,\varphi)=\left[{\begin{array}{cc} R\cdot\cos{\varphi} \\ R\cdot\sin{\varphi} \\ \end{array} }\right]$$
+Bzw. mit einer anderen Parametrisierung:
+$$\vec{r}(s,t)=\left[{\begin{array}{cc} s\cdot\cos{t} \\ s\cdot\sin{t} \\ \end{array} }\right]$$
+
+---
+
+%%
+## 16. TODOs
 - [x] Theoriefragen umbenennen
 - [x] Fertigstellen der alten Theoriefragen (Donnerstag Nachmittag)
 - [ ] Parallele Drähte – Testaufgabe 2019
+	- [x] a)
+	- [ ] b)
 - [ ] 34 Rotierende geladene Kugel – Testaufgabe 2019
+	- [ ] a)
+	- [ ] b)
+- [ ] 20 Metallkugel - Testaufgabe 2019
+	- [ ] a)
+	- [ ] b)
 - [ ] Rechenbeispiele 2009 - 2013 (2. EdynTest_Theorie_u_Bsp.pdf)
 - [ ] Metallkugel (Edyn Test 2_2019.pdf)
 - [ ] Luftspule (Edyn Test 2_2019.pdf)
