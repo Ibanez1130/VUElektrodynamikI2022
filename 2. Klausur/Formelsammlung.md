@@ -4,11 +4,11 @@ $$\oint_C\boldsymbol{B}\cdot dl=\mu_0\int_S\boldsymbol{J}\cdot d\boldsymbol{A}=\
 ### Gauß'sches Gesetz in Integralform
 $$\oint_S\boldsymbol{E}\cdot d\boldsymbol{A}=\frac{1}{\epsilon_0}\cdot\int_V\rho(\boldsymbol{x})\cdot d^3x=\frac{Q_{enclosed}}{\epsilon_0}$$
 ### Green'sche Funktion des Laplaceoperators
-$$G=-\frac{1}{4\pi}\int d^3x'\frac{1}{|x_m-x_m'|}$$
+$$G=-\frac{1}{4\pi}\cdot\frac{1}{|x_m-x_m'|}$$
 
 ---
 
-## 2. Magnetostatische Maxwell-Gleichungen
+## 2. Maxwell-Gleichungen
 ### 1. Maxwell-Gleichung
 #### Elektrostatik
 $$\boldsymbol{\nabla}\cdot \boldsymbol{E}=\partial_iE_i(x_m)=\frac{\rho(x_m)}{\epsilon_0}$$
@@ -25,12 +25,19 @@ $$\boldsymbol{\nabla}\times\boldsymbol{B}=\epsilon_{ijk}\partial_jB_k(x_m)=\mu_0
 
 ---
 
-## 4. Nabla Rechenregeln
+## 4. Nabla-Operator
+### Rechenregeln
 1. $\boldsymbol{\nabla}\cdot\boldsymbol{\nabla}=\boldsymbol{\nabla}^2=\boldsymbol{\Delta}$
 2. $\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)=\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{A}\right)-\boldsymbol{\nabla}^2\boldsymbol{A}$
 3. $\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\varphi\right)=\boldsymbol{\nabla}^2\varphi$
 4. $\boldsymbol{\nabla}\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)=0$
 5. $\boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\varphi\right)=0$
+
+### Zylinderkoordinaten
+$$\boldsymbol{\nabla}=\vec{e}_r\cdot\frac{\partial}{\partial r}+\frac{1}{r}\cdot\vec{e}_{\varphi}\cdot\frac{\partial}{\partial\varphi}+\vec{e}_z\cdot\frac{\partial}{\partial z}$$
+
+### Kugelkoordinaten
+$$\boldsymbol{\nabla}=\vec{e}_r\cdot\frac{\partial}{\partial r}+\frac{1}{r}\cdot\vec{e}_{\theta}\cdot\frac{\partial}{\partial\theta}+\frac{1}{r\cdot\sin{\theta}}\cdot\vec{e}_{\varphi}\cdot\frac{\partial}{\partial\varphi}$$
 
 ---
 
@@ -267,6 +274,12 @@ Ist das elektrische Feld $\boldsymbol{E}$ bekannt, gilt für das elektrische Pot
 $$V\left(\boldsymbol{x}\right)=-\int_{\Gamma}\boldsymbol{E}\left(\boldsymbol{x}\right)\cdot dl$$
 Das elektrische Potential entspricht dem Wegintegral von $x_0$ nach $x$.
 
+### Punktladung
+Das elektrische Potential $V$ einer Punktladung ist wie folgt definiert:
+$$V=\frac{q}{4\pi\cdot\epsilon_0\cdot r}$$
+$q$ ist die Ladung der Quelle bzw. der Punktladung. Der Abstand $r$ entspricht dem betraglichen Abstand zwischen dem Referenzpunkt $\boldsymbol{x}$ und dem Quellpunkt $\boldsymbol{x}'$. Demnach kann man für das elektrische Potential $V$ einer Punktladung auch schreiben:
+$$V(\boldsymbol{x})=\frac{1}{4\pi\cdot\epsilon_0}\cdot\frac{1}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
+
 ---
 
 ## 9. Das magnetische Feld
@@ -299,6 +312,8 @@ $$\boldsymbol{F}=q\boldsymbol{v}\times\boldsymbol{B}$$
 ## 10. Das magnetische Vektorpotential
 Das magnetische Vektorpotential $\boldsymbol{A}$ hängt wie folgt mit der magnetischen Flussdichte $\boldsymbol{B}$ zusammen:
 $$\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}$$
+Ähnlich zu dem Ampére'schen Ausdruck für das magnetische Feld $\boldsymbol{B}$ lässt sich das magnetische Vektorpotential wie folgt anschreiben:
+$$A_i(x_m)=\frac{\mu_0}{4\pi}\cdot\int_V\frac{J_i(x'_m)}{|x_m-x_m'|}\,d^3x'$$
 
 ---
 
@@ -327,12 +342,41 @@ Allgemein gilt für die Ladung $Q$ in einem Kondensator der folgende Zusammenhan
 $$Q=C\cdot U$$
 Daraus folgt mit dem Ohm'schen Gesetz:
 $$R\cdot C=\frac{\epsilon}{\sigma}$$
+### Energie
+Die Energie $U$ eines Kondensators lässt sich wie folgt berechnen:
+$$U=\frac{1}{2}\cdot\int_V\boldsymbol{D}\cdot\boldsymbol{E}\,d^3x$$
+Alternativ kann man die Energie $U$ auch wie folgt berechnen, wobei $C$ die Kapazität darstellt und $V$ die elektrische Spannung:
+$$U=\frac{1}{2}\cdot C\cdot V^2$$
 
 ---
 
 ## 14. Das elektrische Feld
 ### Allgemeine Zusammenhänge
 $$U=s\cdot E$$$$F=q\cdot E$$$$E=-\nabla V$$
+
+### Elektrische Flussdichte
+Die elektrische Flussdichte $\boldsymbol{D}$ ist allgemein wie folgt definiert:
+$$\boldsymbol{D}=\epsilon\cdot\boldsymbol{E}+\boldsymbol{P}$$
+$\boldsymbol{E}$ entspricht in diesem Kontext dem elektrischen Feld und $\boldsymbol{P}$ dem Polarisations-Feld, welches selbst über folgende Formel definiert ist:
+$$\boldsymbol{P}=\frac{1}{\delta V}\cdot\sum_{i=0}^{\delta N}\boldsymbol{p}_i$$
+$\delta V$ ist in diesem Kontext eine Volumenseinheit, $\delta N$ ist die Anzahl an Atomen und $\boldsymbol{p}$ ist der Dipol des $i$-ten Atoms.
+
+### Gauß'sches Gesetz
+Die Definition des Gauß'schen Gesetzes für die elektrische Flussdichte $\boldsymbol{D}$ lautet wie folgt:
+$$\oint_S\boldsymbol{D}\cdot d\boldsymbol{A}=Q_{enclosed}$$
+Basierend auf der ersten Maxwell-Gleichung der Elektrostatik lässt sich auch der folgende Zusammenhang herleiten:
+$$\boldsymbol{\nabla}\cdot\boldsymbol{D}=\rho_{free}$$
+
+#### Vakuum
+Im Vakuum und bei isotropen Leitern vereinfacht sich die Definition der elektrischen Flussdichte $\boldsymbol{D}$ wie folgt:
+$$\boldsymbol{D}=\epsilon_0\cdot\boldsymbol{E}$$
+Die relative Permittivität $\kappa$ stellt das Verhältnis zwischen der Permittivität im Vakuum und der Permittivität im Dielektrikum dar:
+$$\kappa=\frac{\epsilon}{\epsilon_0}$$
+Unter anderem lässt sich so die Energie $U$ eines Kondensators ableiten:
+$$\frac{U_0}{U}=\frac{\epsilon}{\epsilon_0}=\kappa$$
+$U_0$ entspricht dabei der Energie des Kondensators, wenn die Leiterplatten durch ein Vakuum getrennt sind.
+Weiters kann auch die Kapazität $C$ über ein ähnliches Verhältnis, basierend auf der Kapazität im Vakuum $C_0$, ermittelt werden:
+$$\frac{C}{C_0}=\kappa$$
 
 ---
 
@@ -379,6 +423,8 @@ $$\vec{r}(s,t)=\left[{\begin{array}{cc} s\cdot\cos{t} \\ s\cdot\sin{t} \\ \end{a
 	- [ ] a)
 	- [ ] b)
 - [ ] Rechenbeispiele 2009 - 2013 (2. EdynTest_Theorie_u_Bsp.pdf)
+	- [x] 2011 - 1
+	- [x] 2013 - 1
 - [ ] Metallkugel (Edyn Test 2_2019.pdf)
 - [ ] Luftspule (Edyn Test 2_2019.pdf)
 %%
