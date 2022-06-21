@@ -4,7 +4,7 @@ $$\oint_C\boldsymbol{B}\cdot dl=\mu_0\int_S\boldsymbol{J}\cdot d\boldsymbol{A}=\
 ### Gauß'sches Gesetz in Integralform
 $$\oint_S\boldsymbol{E}\cdot d\boldsymbol{A}=\frac{1}{\epsilon_0}\cdot\int_V\rho(\boldsymbol{x})\cdot d^3x=\frac{Q_{enclosed}}{\epsilon_0}$$
 ### Green'sche Funktion des Laplaceoperators
-$$G=-\frac{1}{4\pi}\cdot\frac{1}{|x_m-x_m'|}$$
+$$G(x,x')=-\frac{1}{4\pi}\cdot\frac{1}{|x_m-x_m'|}$$
 
 ---
 
@@ -149,9 +149,9 @@ $$\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{B}\right)-\boldsy
 Weiters ist gemäß der ersten Maxwell-Gleichung der Magnetostatik die Divergenz der magnetischen Flussdichte $\boldsymbol{\nabla}\cdot\boldsymbol{B}$ stets gleich Null. Somit folgt:
 $$\underbrace{\boldsymbol{\nabla}\left(0\right)}_{=0}-\boldsymbol{\nabla}^2\boldsymbol{B}=\mu_0\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\right)$$
 Nun kann, wie in der Angabe beschrieben, die Green'sche Funktion des Laplaceoperators $G$ angewendet werden. Diese lautet in Integralform:
-$$G=-\frac{1}{4\pi}\cdot\frac{1}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
+$$G\left(\boldsymbol{x},\boldsymbol{x}'\right)=-\frac{1}{4\pi}\cdot\frac{1}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
 Eingesetzt folgt somit:
-$$G=\mu_0\cdot\int_VG(\boldsymbol{x}-\boldsymbol{x}')\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\left(\boldsymbol{x'}\right)\right)\,d^3x'$$
+$$G=\mu_0\cdot\int_VG(\boldsymbol{x},\boldsymbol{x}')\cdot\left(\boldsymbol{\nabla}\times\boldsymbol{J}\left(\boldsymbol{x'}\right)\right)\,d^3x'$$
 Somit folgt für den Ausdruck der magnetischen Flussdichte $\boldsymbol{B}$:
 $$\boldsymbol{B}=+\frac{\mu_0}{4\pi}\cdot\int_V\frac{\boldsymbol{\nabla}\times\boldsymbol{J}\left(\boldsymbol{x}'\right)}{|\boldsymbol{x}-\boldsymbol{x}'|}\,d^3x'$$
 Beziehungsweise in Indexschreibweise:
@@ -183,9 +183,9 @@ $$\boldsymbol{\nabla}\left(0\right)-\boldsymbol{\nabla}^2\boldsymbol{A}=\mu_0\cd
 Nachdem der Gradient von Null $\boldsymbol{\nabla}\left(0\right)$ ebenfalls Null ist, kann weiters geschrieben werden:
 $$-\boldsymbol{\nabla}^2\boldsymbol{A}=\mu_0\cdot\boldsymbol{J}$$
 In diesen Ausdruck kann gemäß der Angabe die Greensche Funktion des Laplaceoperators $\boldsymbol{\nabla}^2$ eingesetzt werden. Diese lautet im dreidimensionalen Raum:
-$$G=-\frac{1}{4\pi}\cdot\frac{1}{|x_m-x_m'|}$$
+$$G\left(\boldsymbol{x},\boldsymbol{x}'\right)=-\frac{1}{4\pi}\cdot\frac{1}{|x_m-x_m'|}$$
 Eingesetzt folgt damit:
-$$\boldsymbol{A}\left(\boldsymbol{x}\right)=\mu_0\cdot\int G\left(\boldsymbol{x}-\boldsymbol{x}'\right)\cdot\boldsymbol{J}\left(\boldsymbol{x}'\right)\,d^3x'$$
+$$\boldsymbol{A}\left(\boldsymbol{x}\right)=\mu_0\cdot\int G\left(\boldsymbol{x},\boldsymbol{x}'\right)\cdot\boldsymbol{J}\left(\boldsymbol{x}'\right)\,d^3x'$$
 Final folgt somit der Ausdruck für das magnetische Vektorpotential $\boldsymbol{A}$:
 $$\boldsymbol{A}\left(\boldsymbol{x}\right)=\frac{\mu_0}{4\pi}\cdot\int d^3x'\frac{\boldsymbol{J}\left(\boldsymbol{x}'\right)}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
 Gemäß der Coulomb-Eichung muss gelten, dass die Divergenz des magnetischen Vektorpotentials $\boldsymbol{A}$ gleich Null ist. Auf die Lösung angewandt ist diese Beziehung gegeben, da die Divergenz der elektrischen Stromdichte $\boldsymbol{\nabla}\cdot\boldsymbol{J}$ ebenfalls gleich Null ist.
@@ -304,8 +304,13 @@ $$\boldsymbol{B}\left(\boldsymbol{x}\right)=\frac{\mu_0\cdot I}{2\pi\cdot R}\cdo
 $R$ entspricht dabei dem Radius des Leiters.
 
 ### Kraft
-Die auf ein Teilchen mit der Ladung $q$ wirkende Kraft, verursacht durch ein Magnetfelt mit der magnetischen Flussdichte $\boldsymbol{B}$, entspricht:
+Die auf ein Teilchen mit der Ladung $q$ wirkende Kraft, verursacht durch ein Magnetfeld mit der magnetischen Flussdichte $\boldsymbol{B}$, entspricht:
 $$\boldsymbol{F}=q\boldsymbol{v}\times\boldsymbol{B}$$
+Wirkt auf das Teilchen zusätzlich ein elektrisches Feld, folgt daraus die Lorentz-Kraft: (Elektromagnetismus)
+$$\boldsymbol{F}=q\cdot\left(\boldsymbol{E}+\boldsymbol{v}\times\boldsymbol{B}\right)=\underbrace{q\cdot\boldsymbol{E}}_{\text{el. Kraft}}+\underbrace{q\cdot\boldsymbol{v}\times\boldsymbol{B}}_{\text{mag. Kraft}}$$
+Die Kraft auf einen Leiter lautet wie folgt:
+$$\boldsymbol{F}=\int_{wire}I\,d\boldsymbol{l}\times\boldsymbol{B}$$
+Das magnetische Feld verrichtet **keine Arbeit**. Entsprechend gibt es auch keine potentielle Energie.
 
 ---
 
