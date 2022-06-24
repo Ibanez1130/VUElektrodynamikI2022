@@ -279,6 +279,8 @@ Das elektrische Potential $V$ einer Punktladung ist wie folgt definiert:
 $$V=\frac{q}{4\pi\cdot\epsilon_0\cdot r}$$
 $q$ ist die Ladung der Quelle bzw. der Punktladung. Der Abstand $r$ entspricht dem betraglichen Abstand zwischen dem Referenzpunkt $\boldsymbol{x}$ und dem Quellpunkt $\boldsymbol{x}'$. Demnach kann man für das elektrische Potential $V$ einer Punktladung auch schreiben:
 $$V(\boldsymbol{x})=\frac{1}{4\pi\cdot\epsilon_0}\cdot\frac{1}{|\boldsymbol{x}-\boldsymbol{x}'|}$$
+## Coulomb'scher Ausdruck für $\boldsymbol{E_i(x_m)}$
+$$E_i(x_m)=\frac{1}{4\pi\cdot\epsilon_0}\cdot\int d^3x\cdot\frac{\rho(x_m)\cdot(x_i-x_i')}{{|x_m-x_m'|}^3}$$
 
 ---
 
@@ -338,6 +340,7 @@ $$\int_SdA_i\epsilon_{ijk}\partial_jF_k=\oint_{\partial S}ds_iF_i$$
 $$|[E_t]|=0$$
 $$|[D_n]|=0$$
 $$|[B_n]|=0$$
+$$|[A_t]|=0$$
 
 ---
 
@@ -414,8 +417,17 @@ $$\vec{r}(s,t)=\left[{\begin{array}{cc} s\cdot\cos{t} \\ s\cdot\sin{t} \\ \end{a
 
 ---
 
+## 16. Poisson- und Laplace-Gleichung
+Die Poisson-Gleichung lautet wie folgt:
+$$-\boldsymbol{\nabla}^2V=\frac{\rho}{\epsilon_0}$$
+Nachdem im Vakuum $\rho(\boldsymbol{x})=0$ ist, ergibt sich die Poisson-Gleichung zu:
+$$-\boldsymbol{\nabla}^2V=0$$
+Dieser Ausdruck nennt sich die **Laplace-Gleichung**.
+
+---
+
 %%
-## 16. TODOs
+## 17. TODOs
 - [x] Theoriefragen umbenennen
 - [x] Fertigstellen der alten Theoriefragen (Donnerstag Nachmittag)
 - [ ] Parallele Drähte – Testaufgabe 2019
